@@ -3,11 +3,9 @@ require './card'
 
 class CardTest < MiniTest::Test
 
-  include Comparable
-
   def test_a_card_has_a_face
     card = Card.new("7", "spades")
-    assert_equal 7, card.face
+    assert_equal "7", card.face
   end
 
   def test_a_card_has_a_suit
@@ -17,7 +15,7 @@ class CardTest < MiniTest::Test
 
   def test_a_card_has_a_value
     new_card = Card.new("10", "clubs")
-    assert_equal 10, card.value
+    assert_equal 10, new_card.value
   end
 
   def test_a_card_can_be_compared

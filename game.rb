@@ -24,7 +24,6 @@ class WarGame
     compare_cards
   end
 
-
   def compare_cards
     if @player1_card == @player2_card
       # explorer mode doesn't care what happens when there's a tie

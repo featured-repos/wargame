@@ -26,4 +26,15 @@ class DeckTest < MiniTest::Test
     end
   end
 
+  def test_a_deck_can_be_reshuffled
+    deck = Deck.new
+    deck.cards = []
+    card1 = Card.new("6", "hearts")
+    card2 = Card.new("3", "diamonds")
+    deck.reshuffle([card1, card2])
+    assert deck.cards.length == 2
+    assert deck.cards.include? card1
+    assert deck.cards.include? card2
+  end
+
 end

@@ -20,4 +20,9 @@ class Deck
     # @cards.flatten!
   end
 
+  def reshuffle(cards_won)
+    self.cards += cards_won
+    self.cards.shuffle!
+  end
+
 end
