@@ -41,18 +41,19 @@ class WarGame
   end
 
   def compare_cards
-    puts "#{@player1_card.inspect} vs #{@player2_card.inspect}"
+    # puts "#{@player1_card.inspect} vs #{@player2_card.inspect}"   debugging
     if @player1_card == @player2_card
       check_if_empty
       @p1_tie_card = player1_deck.cards.shift
       @p2_tie_card = player2_deck.cards.shift
 
-      if @p1_tie_card == @p2_tie_card
+      if @p1_tie_card == @p2_tie_card  #cards discarded
       elsif @p1_tie_card > @p2_tie_card
         @p1_cards_won += [@player1_card, @player2_card, @p1_tie_card, @p2_tie_card]
       elsif @p1_tie_card < @p2_tie_card
         @p2_cards_won += [@player1_card, @player2_card, @p1_tie_card, @p2_tie_card]
       end
+
     elsif @player1_card > @player2_card
       @p1_cards_won += [@player1_card, @player2_card]
     elsif @player2_card > @player1_card
@@ -60,11 +61,11 @@ class WarGame
     end
     @round_counter += 1
 
-
     if @player1_deck.cards.count == 0 || @player2_deck.cards.count == 0
       determine_winner
     end
     draw_a_card
+
   end
 
 
