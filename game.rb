@@ -4,8 +4,6 @@ require 'tty'
 
 class WarGame
 
-  include Counters
-
   attr_accessor :player1_deck, :player2_deck, :p1_cards_won, :p2_cards_won, :round_counter, :prompt
 
   def initialize
@@ -36,8 +34,6 @@ class WarGame
       @p2_cards_won += [@player1_card, @player2_card]
     end
     @round_counter += 1
-
-    if @player1_deck
 
     if @player1_deck.cards.count == 0 && @player2_deck.cards.count == 0
       determine_winner
